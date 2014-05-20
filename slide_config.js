@@ -2,7 +2,7 @@ var SLIDE_CONFIG = {
   // Slide settings
   settings: {
     title: 'Modular Front–end',
-    subtitle: 'nil',
+    subtitle: 'mcdlr.com/mfe',
     eventInfo: {
       title: 'RubyConf Uruguay',
       date: '23/05/2014'
@@ -23,7 +23,7 @@ var SLIDE_CONFIG = {
   // Author information
   presenters: [{
     name: 'DrummerHead',
-    company: 'Front–end dev<br>aprend.io',
+    company: 'Front–end Developer<br>aprend.io',
     gplus: '',
     twitter: '@DrummerHead',
     www: 'http://mcdlr.com',
