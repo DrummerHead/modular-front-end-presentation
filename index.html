@@ -168,6 +168,207 @@
   <slide class="segue dark nobackground">
     <aside class="gdbar"><img src="images/google_developers_icon_128.png"></aside>
     <hgroup class="auto-fadein">
+      <h2>Modular composition</h2>
+      <h3>Building the legos</h3>
+    </hgroup>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Let's analyze the “nuts” guy</h2>
+    </hgroup>
+    <article class="flexbox vcenter">
+      <img src='images/nuts.jpg' alt=''>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>&#160;</h2>
+    </hgroup>
+    <article>
+      <pre class="prettyprint" data-lang="html">
+&#60;div class='character-highlight'>
+  &#60;figure class='offer'>
+    &#60;a href='#flour'>
+      &#60;img src='flour.jpg' alt='Flour'>
+      &#60;figcaption>
+        &#60;h3>Almond Flour&#60;/h3>
+        &#60;p>Almond flour is low-carb&#60;/p>
+        &#60;span class='inline-cta'>
+          &#60;strong>$8.99 /lb&#60;/strong>
+          &#60;a href='#flour'>Order now&#60;/a>
+        &#60;/span>
+      &#60;/figcaption>
+    &#60;/a>
+  &#60;/figure>
+&#60;/div>
+</pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>&#160;</h2>
+    </hgroup>
+    <article>
+      <pre class="prettyprint" data-lang="css">
+.character-highlight {
+}
+.offer {
+}
+.offer > a {
+}
+.offer img {
+}
+.inline-cta {
+}
+.inline-cta strong {
+}
+.inline-cta a {
+}
+</pre>
+    </article>
+  </slide>
+
+
+  <slide class="segue dark nobackground">
+    <aside class="gdbar"><img src="images/google_developers_icon_128.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>My single tip about SASS</h2>
+      <h3>tl;dr don't use nesting</h3>
+    </hgroup>
+  </slide>
+
+  <slide>
+    <article>
+      <pre class="prettyprint" data-lang="css">
+#about {
+}
+</pre>
+    </article>
+  </slide>
+
+  <slide>
+    <article>
+      <pre class="prettyprint" data-lang="css">
+#about {
+  h1 {
+    font-size: 5em;
+  }
+}
+</pre>
+    </article>
+  </slide>
+
+  <slide>
+    <article>
+      <pre class="prettyprint" data-lang="css">
+#about {
+  h1 {
+    font-size: 5em;
+    > span {
+      margin-top: .5em;
+    }
+  }
+}
+</pre>
+    </article>
+  </slide>
+
+  <slide>
+    <article>
+      <pre class="prettyprint" data-lang="css">
+#about {
+  h1 {
+    font-size: 5em;
+    > span {
+      margin-top: .5em;
+    }
+  }
+  form#contact {
+    .form-group {
+      border-top: 1px solid #ccc;
+    }
+  }
+}
+</pre>
+    </article>
+  </slide>
+
+  <slide>
+    <article>
+      <pre class="prettyprint" data-lang="css">
+#about {
+  h1 {
+    font-size: 5em;
+    > span {
+      margin-top: .5em;
+    }
+  }
+  form#contact {
+    .form-group {
+      border-top: 1px solid #ccc;
+      input[type="text"] {
+        font-family: sans-serif;
+      }
+    }
+  }
+}
+</pre>
+    </article>
+  </slide>
+
+  <slide>
+    <article>
+      <pre class="prettyprint" data-lang="css">
+#about,
+#contact-us {
+  h1 {
+    font-size: 5em;
+    > span {
+      margin-top: .5em;
+    }
+  }
+  form#contact {
+    .form-group {
+      border-top: 1px solid #ccc;
+      input[type="text"] {
+        font-family: sans-serif;
+      }
+    }
+  }
+}
+</pre>
+    </article>
+  </slide>
+
+  <slide>
+    <article>
+      <pre class="prettyprint" data-lang="css">
+#about h1,
+#contact-us h1 {
+  font-size: 5em;
+}
+#about h1 > span,
+#contact-us h1 > span {
+  margin-top: .5em;
+}
+#about form#contact .form-group,
+#contact-us form#contact .form-group {
+  border-top: 1px solid #ccc;
+}
+#about form#contact .form-group input[type="text"],
+#contact-us form#contact .form-group input[type="text"] {
+  font-family: sans-serif;
+}
+</pre>
+    </article>
+  </slide>
+
+  <slide class="segue dark nobackground">
+    <aside class="gdbar"><img src="images/google_developers_icon_128.png"></aside>
+    <hgroup class="auto-fadein">
       <h2>CSS organization</h2>
       <h3>Order and simplification</h3>
     </hgroup>
@@ -179,7 +380,7 @@
     </hgroup>
     <article>
       <p>One file for each or divided by comments on a single file</p>
-      <ul class="build">
+      <ul>
         <li>Color scheme & variables</li>
         <li>Mixins, extends, helpers</li>
         <li>Baseline</li>
@@ -567,8 +768,139 @@ nav ul {
     </article>
   </slide>
 
+  <slide class="segue dark nobackground">
+    <aside class="gdbar"><img src="images/google_developers_icon_128.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>Front–end Styleguides</h2>
+      <h3>In building documentation the patterns arise</h3>
+    </hgroup>
+  </slide>
 
-  <!-- here -->
+  <slide>
+    <hgroup>
+      <h2>Look for yourself!</h2>
+    </hgroup>
+    <article>
+      <ul>
+        <li>
+          <a href='https://ux.mailchimp.com/patterns'>https://ux.mailchimp.com/patterns</a>
+        </li>
+        <li>
+          <a href='https://github.com/styleguide/css'>https://github.com/styleguide/css</a>
+        </li>
+        <li>
+          <a href='http://www.bbc.co.uk/gel'>http://www.bbc.co.uk/gel</a>
+        </li>
+        <li>
+          <a href='http://sfdc-styleguide.herokuapp.com/'>http://sfdc-styleguide.herokuapp.com/</a>
+        </li>
+        <li>
+          <a href='http://clearleft.com/styleguide/'>http://clearleft.com/styleguide/</a>
+        </li>
+        <li>
+          <a href='https://www.mozilla.org/en-US/styleguide/'>https://www.mozilla.org/en-US/styleguide/</a>
+        </li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>But... doesn't this look like?</h2>
+    </hgroup>
+    <article>
+      <ul>
+        <li>
+          <a href='http://foundation.zurb.com/'>http://foundation.zurb.com/</a>
+        </li>
+        <li>
+          <a href='http://getbootstrap.com/'>http://getbootstrap.com/</a>
+        </li>
+      </ul>
+      <br>
+      <br>
+      <h2>It does!</h2>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>They started as styleguides!</h2>
+    </hgroup>
+    <article class="flexbox vcenter">
+      <img src="images/Style-Guide-Nav.jpg" alt="">
+    </article>
+  </slide>
+
+  <slide class="segue dark nobackground">
+    <aside class="gdbar"><img src="images/google_developers_icon_128.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>Investigate</h2>
+      <h3>And find the way that works for you</h3>
+    </hgroup>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Many professionals are converging to<br>the same conclusions</h2>
+    </hgroup>
+    <article>
+      <ul>
+        <li>
+          <a href='http://smacss.com/'>http://smacss.com/</a>
+        </li>
+        <li>
+          <a href='http://bem.info/'>http://bem.info/</a>
+        </li>
+        <li>
+          <a href='http://bradfrostweb.com/blog/post/atomic-web-design/'>http://bradfrostweb.com/blog/post/atomic-web-design/</a>
+        </li>
+        <li>
+          <a href='https://www.gov.uk/design-principles'>https://www.gov.uk/design-principles</a>
+        </li>
+        <li>
+          <a href='http://livingstyleguide.org/'>http://livingstyleguide.org/</a>
+        </li>
+        <li>
+          <a href='https://github.com/bjankord/Style-Guide-Boilerplate'>https://github.com/bjankord/Style-Guide-Boilerplate</a>
+        </li>
+        <li>
+          <a href='https://github.com/adactio/Pattern-Primer'>https://github.com/adactio/Pattern-Primer</a>
+        </li>
+        <li>
+          <a href='http://alistapart.com/article/creating-style-guides'>http://alistapart.com/article/creating-style-guides</a>
+        </li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide class="segue dark nobackground">
+    <aside class="gdbar"><img src="images/google_developers_icon_128.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>Share your knowledge</h2>
+      <h3>Everyone can build on the Internet!</h3>
+    </hgroup>
+  </slide>
+
+  <slide>
+    <article class="flexbox vcenter">
+      <a href='http://aprend.io/' class='undercover'>
+        <img src="images/aprendio-logo.png" alt="">
+      </a>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>aprend.io chivo</h2>
+    </hgroup>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>probably the end?</h2>
+    </hgroup>
+  </slide>
 
   <slide>
     <hgroup>
