@@ -765,7 +765,7 @@ article.smaller {
 }
 
 .auto-fadein {
-  @include transition(opacity 0.6s ease-in 1s);
+  @include transition(opacity 0.2s ease-in 0.2s);
   opacity: 0;
 }
 
@@ -854,7 +854,7 @@ aside.gdbar {
   @include border-radius(0 10px 10px 0);
   @include background(linear-gradient(left, $gray-1, $gray-1) no-repeat);
   @include background-size(0% 100%);
-  @include transition(all 0.5s ease-out 0.5s); /* Better to transition only on background-size, but not sure how to do that with the mixin. */
+  @include transition(all 0.2s ease-out 0.2s); /* Better to transition only on background-size, but not sure how to do that with the mixin. */
 
   &.right {
     right: 0;
